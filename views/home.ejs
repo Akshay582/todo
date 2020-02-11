@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>TODO App</h1>
+            <hr>
+        </header>
+        <form action="">
+            <div class="description">
+                description
+            <br>
+            <input type="text" placeholder="What do you want to do?">
+            </div>
+            <hr>
+            <div class="half">
+                category
+            <br>
+            <select name="" id="">
+                <option value="">Choose a category</option>
+                <option value="cat"></option>
+            </select>
+            </div>
+            <div class="half">
+                due date
+            <br>
+            <input type="text" 
+            onfocus="(this.type = 'date')" 
+            onblur="(this.type = 'text')" 
+            placeholder="dd/mm/yyyy">
+            </div>
+            <hr>
+            <button id="add">
+                <i class="fas fa-plus"></i>
+                &nbsp;Add Task
+            </button>
+            <button id="delete">
+                <i class="fas fa-trash-alt"></i>
+                &nbsp;&nbsp;Delete Tasks
+            </button>
+            <hr>
+        </form>
+        <section id="data">
+            <div>
+            </div>
+        </section>
+        <script src="https://kit.fontawesome.com/77537fea5c.js" crossorigin="anonymous"></script>
+    </main>
+</body>
+</html>

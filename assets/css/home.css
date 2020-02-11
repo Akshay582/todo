@@ -1,0 +1,84 @@
+/*dimming the body*/
+body{
+	margin: 0;
+	color: dimgray;
+	background-color: darkgray;
+	font-family: 'Raleway', sans-serif;
+}
+
+/*resizing the main display of the webpage*/
+main{
+	min-height: 80vh;
+	min-width: 50vw;
+	background-color: white;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	text-align: center;
+}
+
+h1{
+	font-family: 'Muli', sans-serif;
+}
+
+/*working on the buttons*/
+#add, #delete{
+	border-width: 0;
+	min-height: 12vh;
+	min-width: 15vw;
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 1.1rem;
+	letter-spacing: 0.1rem;
+}
+
+#add{background-color: darkslategrey;}
+
+#delete{background-color: orangered;}
+
+/*stylizing the form input elements*/
+form{
+	font-weight: bold;
+	font-size: 0.8rem;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+}
+
+/*working on the description*/
+.description{
+	padding-left: 1.6%;
+	text-align: left;
+}
+
+.description input{
+	min-height: 2rem;
+	min-width: 93.5%;
+	border-width: 0;
+}
+
+/*spliting the category and due date*/
+.half{
+	display: inline-block;
+	width: 48%;
+	text-align: left;
+}
+
+.half input{
+	min-height: 2rem;
+	min-width: 90%;
+	border-width: 0;
+}
+
+.half select{
+	color: slategray;
+	min-height: 2rem;
+	min-width: 90%;
+	border-width: 0;
+}
+
+/*changing the color of the placeholder*/
+::placeholder{
+	color: slategray;
+}
