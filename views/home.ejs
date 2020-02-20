@@ -15,43 +15,59 @@
             <h1>TODO App</h1>
             <hr>
         </header>
-        <form action="">
+        <form id="create-todo" action="/create-todo" method="POST">
             <div class="description">
                 description
             <br>
-            <input type="text" placeholder="What do you want to do?">
+            <input type="text" name="description" placeholder="What do you want to do?" required>
             </div>
             <hr>
             <div class="half">
                 category
             <br>
-            <select name="" id="">
-                <option value="">Choose a category</option>
-                <option value="cat"></option>
+            <select name="category">
+                <option value="cat">Choose a category</option>
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="school">School</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="other">Other</option>
             </select>
             </div>
             <div class="half">
                 due date
             <br>
             <input type="text" 
+            name="dueDate"
             onfocus="(this.type = 'date')" 
             onblur="(this.type = 'text')" 
-            placeholder="dd/mm/yyyy">
+            placeholder="dd/mm/yyyy"
+            required>
             </div>
-            <hr>
-            <button id="add">
-                <i class="fas fa-plus"></i>
-                &nbsp;Add Task
-            </button>
-            <button id="delete">
-                <i class="fas fa-trash-alt"></i>
-                &nbsp;&nbsp;Delete Tasks
-            </button>
             <hr>
         </form>
+        <button id="add" form="create-todo">
+            <i class="fas fa-plus"></i>
+            &nbsp;Add Task
+        </button>
+        <button id="delete">
+            <i class="fas fa-trash-alt"></i>
+            &nbsp;&nbsp;Delete Tasks
+        </button>
+        <hr>
         <section id="data">
-            <div>
+            <% for (let i of todo_list) {%>
+            <div class="fetched-data">
+                <input type="checkbox">
+                    <label>
+                        <span><%= i.description %></span>
+                        <span><%= i.category %></span>
+                        <!--  -->
+                        <span><%= i.dueDate.getFullYear()+'-' + (i.dueDate.getMonth()+1) + '-'+i.dueDate.getDate(); %></span>
+                    </label>
+                </input>   
             </div>
+            <%}%>
         </section>
         <script src="https://kit.fontawesome.com/77537fea5c.js" crossorigin="anonymous"></script>
     </main>
