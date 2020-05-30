@@ -1,0 +1,176 @@
+/*dimming the body*/
+body{
+	margin: 0;
+	color: dimgray;
+	background-color: darkgray;
+	font-family: 'Raleway', sans-serif;
+}
+
+/*resizing the main display of the webpage*/
+main{
+	min-height: 80vh;
+	min-width: 50vw;
+	background-color: white;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	text-align: center;
+}
+
+h1{
+	font-family: 'Muli', sans-serif;
+}
+
+/*working on the buttons*/
+#add, #delete{
+	border-width: 0;
+	min-height: 12vh;
+	min-width: 15vw;
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 1.1rem;
+	letter-spacing: 0.1rem;
+}
+
+#add{background-color: darkslategrey;}
+
+#delete{background-color: orangered;}
+
+/*stylizing the form input elements*/
+form{
+	font-weight: bold;
+	font-size: 0.8rem;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+}
+
+/*working on the description*/
+// .description{
+// 	padding-left: 1.6%;
+// 	text-align: left;
+// }
+
+.description{
+	padding-left: 1.6%;
+	text-align: left;
+	input{
+		min-height: 2rem;
+		min-width: 93.5%;
+		border-width: 0;
+	}
+}
+
+/*spliting the category and due date*/
+.half{
+	display: inline-block;
+	width: 48%;
+	text-align: left;
+	input{
+		min-height: 2rem;
+		min-width: 90%;
+		border-width: 0;
+	}
+	select{
+		color: slategray;
+		min-height: 2rem;
+		min-width: 90%;
+		border-width: 0;
+	}
+}
+
+// .half input{
+// 	min-height: 2rem;
+// 	min-width: 90%;
+// 	border-width: 0;
+// }
+
+// .half select{
+// 	color: slategray;
+// 	min-height: 2rem;
+// 	min-width: 90%;
+// 	border-width: 0;
+// }
+
+/*changing the color of the placeholder*/
+::placeholder{
+	color: slategray;
+}
+
+#data{
+	margin:3%;
+}
+
+/* stylising the to-do list display */
+.fetched-data{
+	// dimensions
+	min-height: 10vh;
+	text-align: left;
+	min-width: 10vw;
+	padding-left: 1%;
+	// style for the container
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+}
+
+.info{
+	// vertically centering the container
+	transform: translateY(10%);
+	// dimensions
+	min-width: 75%;
+	padding-left: 2%;
+	// font
+	color: black;
+	font-size: 1.3rem;
+	.due-date{
+		// font
+		color: dimgray;
+		font-size: 0.9rem;
+		font-weight: bold;
+		letter-spacing: 0.05rem;
+	}
+}
+
+// Designing the checkbox
+.myCheck{
+	display: inline-block;
+	transform: translateY(35%);
+}
+
+// Designing the category
+.cat{
+	transform: translateY(25%);
+	button{
+		// dimensions
+		height: 50%;
+		width: 140%;
+		border-width: 0;
+		border-radius: 5px;
+		// font style
+		color: white;
+		background-color: black;
+		font-weight: bold;
+		font-family: 'Raleway', sans-serif;
+		letter-spacing: 0.08rem;
+	}
+}
+
+.disp-description{
+	font-weight: bold;
+}
+
+// A little bit for responsive design
+
+@media only screen and (max-width: 1000px) {
+	main {
+		min-width: 70vw;
+	}
+  }
+
+@media only screen and (max-width: 700px) {
+	main {
+		min-width: 100vw;
+	}
+  }

@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= title %></title>
+    <!-- Raleway font -->
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Muli font -->
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/home.css">
 </head>
@@ -15,6 +17,7 @@
             <h1>TODO App</h1>
             <hr>
         </header>
+        <!-- creating a todo -->
         <form id="create-todo" action="/create-todo" method="POST">
             <div class="description">
                 description
@@ -27,11 +30,11 @@
             <br>
             <select name="category">
                 <option value="cat">Choose a category</option>
-                <option value="personal">Personal</option>
-                <option value="work">Work</option>
-                <option value="school">School</option>
-                <option value="cleaning">Cleaning</option>
-                <option value="other">Other</option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Other">Other</option>
             </select>
             </div>
             <div class="half">
@@ -46,30 +49,48 @@
             </div>
             <hr>
         </form>
+        <!-- add task button -->
         <button id="add" form="create-todo">
             <i class="fas fa-plus"></i>
             &nbsp;Add Task
         </button>
-        <button id="delete">
-            <i class="fas fa-trash-alt"></i>
-            &nbsp;&nbsp;Delete Tasks
-        </button>
-        <hr>
+        <!-- delete tasks button, can delete multiple tasks -->
+        <a id="anchor" href="/delete-todo/?id=">
+            <button id="delete" onclick="Click()">
+                <i class="fas fa-trash-alt"></i>
+                &nbsp;&nbsp;Delete Tasks
+            </button>
+        </a>
+        <!-- Displaying todos in the mongodb database -->
         <section id="data">
             <% for (let i of todo_list) {%>
-            <div class="fetched-data">
-                <input type="checkbox">
-                    <label>
-                        <span><%= i.description %></span>
-                        <span><%= i.category %></span>
-                        <!--  -->
-                        <span><%= i.dueDate.getFullYear()+'-' + (i.dueDate.getMonth()+1) + '-'+i.dueDate.getDate(); %></span>
-                    </label>
-                </input>   
-            </div>
+                <hr>
+                <div class="fetched-data">
+                    <div class="myCheck">
+                        <input id="<%= i._id %>" type="checkbox" class="ifChecked">
+                    </div>
+                    <div class="info">
+                        <span class="disp-description"><%= i.description %></span>
+                        <br>
+                        <span class="due-date">
+                            <i class="far fa-calendar"></i>
+                            <% const today = new Date(); %>
+                            <%= i.dueDate.getDate() - today.getDate(); %>
+                            Day(s) left
+                        </span>
+                    </div>
+                    <% if(i.category != 'cat') {%>
+                        <div class="cat">
+                            <button disabled><%= i.category %></button>
+                        </div>
+                    <%}%>
+                </div>
             <%}%>
-        </section>
-        <script src="https://kit.fontawesome.com/77537fea5c.js" crossorigin="anonymous"></script>
-    </main>
-</body>
+            <hr>
+            </section>
+            <!-- font awesome import using script tag -->
+            <script src="https://kit.fontawesome.com/77537fea5c.js" crossorigin="anonymous"></script>
+            <script src="/js/home.js"></script>
+        </main>
+    </body>
 </html>
